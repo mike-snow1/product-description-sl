@@ -49,12 +49,13 @@ if option_prompt == 'Classification':
 
 if upload and prompt:
     image = Image.open(upload).convert('RGB')
-    image = vis_processors["eval"](raw_image).unsqueeze(0).to('cpu')
     
     st.image(image, width=700)
     st.markdown('## Model loading')
     model, vis_processors, _ = load_model_and_preprocess(name="blip2_t5", model_type=option_model, is_eval=True, device='cpu')
     st.markdown('## Model loaded')
+
+    image = vis_processors["eval"](raw_image).unsqueeze(0).to('cpu')
     
     # model.generate({"image": image, "prompt": "Can you give a detailed description of this image?"})
     response = model.generate({"image": image, "prompt": "Is this a picture of a wardrobe?"})
