@@ -47,7 +47,7 @@ if option_prompt == 'Classification':
     prompt = 'Is this product a wardrobe?'
     
 
-if upload and prompt:
+if upload and prompt and option_model:
     image = Image.open(upload).convert('RGB')
     
     st.image(image, width=700)
