@@ -48,7 +48,7 @@ if option_prompt == 'Classification':
     
 
 if upload and prompt:
-    image = Image.open(img_path).convert('RGB')
+    image = Image.open(upload).convert('RGB')
     image = vis_processors["eval"](raw_image).unsqueeze(0).to('cpu')
     
     st.image(image, width=700)
