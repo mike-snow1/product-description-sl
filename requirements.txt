@@ -1,2 +1,6 @@
 streamlit
 salesforce-lavis
+numpy
+pandas
+opencv-python
+pillow
