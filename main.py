@@ -69,7 +69,7 @@ if upload:
     image = Image.open(upload).convert('RGB')
     st.image(image, width=700)
 
-    image = cv2.imread(img_path)
+    image = cv2.imread(upload)
 
     # Reshape the 3D image array into a 2D array where each row represents a pixel (R, G, B values)
     pixels = image.reshape(-1, 3)
