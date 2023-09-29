@@ -2,8 +2,10 @@ import cv2
 
 import pandas as pd
 import streamlit as st
+import matplotlib.pyplot as plt
 
 from PIL import Image
+from mpl_toolkits.mplot3d import Axes3D
 
 
 csv = pd.read_csv('ikea_colours.csv')
