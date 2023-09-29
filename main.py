@@ -1,5 +1,8 @@
 import cv2
 
+import plotly.express as px
+import plotly.figure_factory as ff
+
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -109,4 +112,18 @@ if upload:
 # ax.legend(handles=handles, title='Color')
     st.markdown('## Colour space:')
     st.pyplot(fig)
+
+    fig = px.scatter_3d(csv, x='Red', y='Green', z='Blue', color='Color', text='Color', size_max=10)
+
+# Customize the layout
+    fig.update_layout(
+        scene=dict(
+            xaxis_title='Red',
+            yaxis_title='Green',
+            zaxis_title='Blue',
+        ),
+        legend_title='Color',
+    )
+    st.markdown('## Colour space interactive:')
+    st.plotly_chart(fig, use_container_width=True)
     
