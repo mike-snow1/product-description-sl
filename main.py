@@ -84,4 +84,27 @@ if upload:
     
     st.markdown('## Colour occurs in this percentage of pixels:')
     st.write(ratio)
+
+    fig = plt.figure(figsize=(12, 10))
+
+    ax = fig.add_subplot(111, projection='3d')
+
+# Scatter plot
+    scatter = ax.scatter(csv['Red'], csv['Green'], csv['Blue'], c=csv['Color'], s=100, marker='o')
+
+# Add color labels next to each point
+    for i, txt in enumerate(csv['Color']):
+        ax.text(csv['Red'][i], csv['Green'][i], csv['Blue'][i], txt, size=12, color='black')
+
+# Set axis labels
+    ax.set_xlabel('Red')
+    ax.set_ylabel('Green')
+    ax.set_zlabel('Blue')
+
+# Customize the legend
+    legend_labels = csv['Color'].unique()
+    handles = [plt.Line2D([0], [0], marker='o', color='w', label=label, markersize=10, markerfacecolor=color) for label, color in zip(legend_labels, scatter.get_facecolor())]
+# ax.legend(handles=handles, title='Color')
+    st.markdown('## Colour space:')
+    st.pyplot(fig)
     
