@@ -5,6 +5,8 @@ import streamlit as st
 from PIL import Image
 
 
+csv = pd.read_csv('ikea_colours.csv')
+
 def get_color_name(Red, Green, Blue):
         minimum = 10000
         for i in range(len(csv)):
