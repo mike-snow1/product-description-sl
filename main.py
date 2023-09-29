@@ -113,10 +113,10 @@ if upload:
     st.markdown('## Colour space:')
     st.pyplot(fig)
 
-    fig = px.scatter_3d(csv, x='Red', y='Green', z='Blue', color='Color', text='Color', size_max=10)
+    figure = px.scatter_3d(csv, x='Red', y='Green', z='Blue', color='Color', text='Color', size_max=10)
 
 # Customize the layout
-    fig.update_layout(
+    figure.update_layout(
         scene=dict(
             xaxis_title='Red',
             yaxis_title='Green',
@@ -125,5 +125,5 @@ if upload:
         legend_title='Color',
     )
     st.markdown('## Colour space interactive:')
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(figure, use_container_width=True)
     
