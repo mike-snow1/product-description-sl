@@ -11,7 +11,7 @@ from PIL import Image
 from mpl_toolkits.mplot3d import Axes3D
 
 
-csv = pd.read_csv('colours.csv')
+csv = pd.read_csv('colors.csv')
 
 def get_color_name(Red, Green, Blue):
         minimum = 10000
